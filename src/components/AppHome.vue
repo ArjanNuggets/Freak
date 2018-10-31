@@ -27,6 +27,7 @@
          épisode de la franchise, tandis que d'autres mettent l'accent critique sur les micro-transactions.
           Le mode carrière dispose des commentaires en mandarin, une première dans l'histoire de la série.
         </div>
+
         <app-rating></app-rating>
 
     </div>
@@ -93,6 +94,9 @@
       components:{AppPage,AppRating},
       data () {
         return {
+          images: {
+              logo: require('../assets/logo.png')
+          },
           items: [
             {
               src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg'
@@ -104,11 +108,13 @@
               src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'
             },
             {
-              src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg'
+              src: require('../assets/logo.png'),
             }
-          ]
+          ],
+
+          }
+
         }
       }
-    }
 
   </script>

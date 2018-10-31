@@ -4,7 +4,7 @@
     <v-toolbar-side-icon></v-toolbar-side-icon>
 
     <router-link to='/'>
-      <v-toolbar-title class='white--text'>Freak</v-toolbar-title>
+      <v-toolbar-title class='white--text'>Le meilleur site de jeu, si tu donnes le numero de carte, le cryptograme et la date d'expiration de la carte de ta maman</v-toolbar-title>
     </router-link>
 
     <v-spacer></v-spacer>

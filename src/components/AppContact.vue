@@ -3,10 +3,7 @@
     <v-layout row class="ma-3">
       <v-flex xs12 sm6 offset-sm3>
         <v-card>
-          <v-img
-            src="https://cdn.vuetifyjs.com/images/lists/ali.png"
-            height="300px"
-          >
+          <img :src="images.logo">
             <v-layout
               column
               fill-height
@@ -163,3 +160,16 @@
     </v-layout>
   </div>
 </template>
+
+<script>
+  export default {
+    data() {
+        return {
+            images: {
+                logo: require('../assets/logo.png')
+            }
+        }
+    }
+  }
+
+</script>
