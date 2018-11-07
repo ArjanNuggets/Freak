@@ -1,0 +1,38 @@
+<template>
+  <v-container fluid>
+    <v-layout row wrap>
+      <v-flex xs6>
+        <v-subheader>Custom items</v-subheader>
+      </v-flex>
+      <v-flex xs6>
+        <v-select
+          :items="items"
+          v-model="select"
+          label="Select"
+          single-line
+          item-text="state"
+          item-value="abbr"
+          return-object
+          :hint="`${select.state}, ${select.abbr}`"
+          persistent-hint
+        ></v-select>
+      </v-flex>
+    </v-layout>
+  </v-container>
+</template>
+
+<script>
+  export default {
+    data: () => ({
+
+        select: { state: 'Selectionner', abbr: '' },
+        items: [
+          { state: 'Mâle', abbr: 'M' },
+          { state: 'Female', abbr: 'F' },
+          { state: 'Non-Binary', abbr: 'Bullshit' },
+          { state: 'California', abbr: 'CA' },
+          { state: 'New York', abbr: 'NY' }
+        ]
+      })
+    }
+</script>

@@ -1,5 +1,6 @@
 <template>
-  <v-footer
+  <div>
+    <v-footer
     height="auto"
     color = 'grey darken-4'
   >
@@ -9,14 +10,20 @@
       wrap
     >
       <v-btn
-        v-for="link in links"
-        :key="link"
         color="white"
         flat
         round
       >
-        {{ link }}
+      Home
       </v-btn>
+      <v-btn
+        color="white"
+        flat
+        round
+      >
+      About us
+      </v-btn>
+
       <v-flex
         primary
         lighten-2
@@ -29,19 +36,11 @@
       </v-flex>
     </v-layout>
   </v-footer>
+</div>
 </template>
 
 <script>
   export default {
-    data: () => ({
-      links: [
-        'Home',
-        'About Us',
-        'Team',
-        'Services',
-        'Blog',
-        'Contact Us'
-      ]
-    })
+
   }
 </script>

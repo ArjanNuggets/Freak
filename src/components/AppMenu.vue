@@ -1,20 +1,11 @@
 <template>
   <div class="text-xs-center">
     <v-menu offset-y>
-      <v-btn
-        slot="activator"
-        color="primary"
-        dark
-      >
-        Dropdown
-      </v-btn>
+      <v-btn color="grey darken-4" dark slot="activator">Jeux</v-btn>
       <v-list>
-        <v-list-tile
-          v-for="(item, index) in items"
-          :key="index"
-          @click=""
-        >
-          <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+        <v-list-tile @click="">
+          <v-list-tile-title>Red Dead Redemption II</v-list-tile-title>
+          <v-list-tile-title>Sims</v-list-tile-title>
         </v-list-tile>
       </v-list>
     </v-menu>
@@ -23,13 +14,6 @@
 
 <script>
   export default {
-    data: () => ({
-      items: [
-        { title: 'NBA2k19' },
-        { title: 'Red Dead Redemption II' },
-        { title: 'Spiderman' },
-        { title: 'Fallout IV' }
-      ]
-    })
+    
   }
 </script>

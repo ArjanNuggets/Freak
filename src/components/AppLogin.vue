@@ -38,7 +38,7 @@
                   <v-spacer></v-spacer>
 
                   <v-btn color="primary">Login</v-btn>
-                  
+
                 </v-card-actions>
               </v-card>
             </v-flex>
@@ -46,6 +46,7 @@
         </v-container>
       </v-content>
     </v-app>
+
 
   </div>
 </template>
