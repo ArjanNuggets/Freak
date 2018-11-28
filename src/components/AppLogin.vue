@@ -54,9 +54,12 @@
 <script>
   import AppFooter from './AppFooter'
   export default {
-    data: () => ({
-      drawer: null
-    }),
+    data() {
+      return {
+        email:'',
+        password:'',
+      }
+    },
     props: {
       source: String
     },

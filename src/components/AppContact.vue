@@ -1,9 +1,12 @@
 <template>
   <div>
-    <v-layout row class="ma-3">
+    <v-layout row>
       <v-flex xs12 sm6 offset-sm3>
         <v-card>
-          <img :src="images.logo">
+          <v-img
+            src="https://cdn.vuetifyjs.com/images/lists/ali.png"
+            height="300px"
+          >
             <v-layout
               column
               fill-height
@@ -39,8 +42,8 @@
               </v-list-tile-action>
 
               <v-list-tile-content>
-                <v-list-tile-title>076 383 75 10</v-list-tile-title>
-                <v-list-tile-sub-title>Mobile</v-list-tile-sub-title>
+                <v-list-tile-title></v-list-tile-title>
+                <v-list-tile-sub-title>076 383 75 10</v-list-tile-sub-title>
               </v-list-tile-content>
 
               <v-list-tile-action>
@@ -56,20 +59,16 @@
               </v-list-tile-action>
 
               <v-list-tile-content>
-                <v-list-tile-title>ArianDervishaj@icloud.com</v-list-tile-title>
-                <v-list-tile-sub-title>Personal</v-list-tile-sub-title>
+                <v-list-tile-title></v-list-tile-title>
+                <v-list-tile-sub-title>ArianDervishaj@gmail.com</v-list-tile-sub-title>
               </v-list-tile-content>
             </v-list-tile>
             <v-divider inset></v-divider>
 
-            <v-list-tile @click="">
-              <v-list-tile-action>
-                <v-icon color="indigo">location_on</v-icon>
-              </v-list-tile-action>
 
               <v-list-tile-content>
-                <v-list-tile-title>Rue Rothschild 46</v-list-tile-title>
-                <v-list-tile-sub-title>1202 Genève</v-list-tile-sub-title>
+                <v-list-tile-title></v-list-tile-title>
+                <v-list-tile-sub-title></v-list-tile-sub-title>
               </v-list-tile-content>
             </v-list-tile>
           </v-list>
@@ -122,7 +121,7 @@
 
               <v-list-tile-content>
                 <v-list-tile-title></v-list-tile-title>
-                <v-list-tile-sub-title>Mobile</v-list-tile-sub-title>
+                <v-list-tile-sub-title>078 603 45 01</v-list-tile-sub-title>
               </v-list-tile-content>
 
               <v-list-tile-action>
@@ -139,15 +138,11 @@
 
               <v-list-tile-content>
                 <v-list-tile-title></v-list-tile-title>
-                <v-list-tile-sub-title>Personal</v-list-tile-sub-title>
+                <v-list-tile-sub-title>GaetanLeiglon@gmail.com</v-list-tile-sub-title>
               </v-list-tile-content>
             </v-list-tile>
             <v-divider inset></v-divider>
 
-            <v-list-tile @click="">
-              <v-list-tile-action>
-                <v-icon color="indigo">location_on</v-icon>
-              </v-list-tile-action>
 
               <v-list-tile-content>
                 <v-list-tile-title></v-list-tile-title>
@@ -163,13 +158,6 @@
 
 <script>
   export default {
-    data() {
-        return {
-            images: {
-                logo: require('../assets/logo.png')
-            }
-        }
-    }
   }
 
 </script>
