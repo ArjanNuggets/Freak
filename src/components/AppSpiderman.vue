@@ -19,29 +19,31 @@
 </template>
 
 <script>
-import {spiderman} from '@/firebase';
+  import {spiderman} from '@/firebase';
 
 
 
-export default {
+  export default {
 
-  firebase : {
-     coms : spiderman
-  },
-
-  methods : {
-    submitCom() {
-      spiderman.push({commentaire : this.commentaire, edit: false});
-      this.commentaire="";
+    firebase : {
+       coms : spiderman
     },
 
-    removeCom(key) {
-      spiderman.child(key).remove();
-    }
+    methods : {
+      submitCom() {
+        spiderman.push({commentaire : this.commentaire, edit: false});
+        this.commentaire="";
+      },
 
+      removeCom(key) {
+        spiderman.child(key).remove();
+      }
+
+    }
   }
-}
-</script>
+  </script>
+
+  
 <style>
 
 button, input {

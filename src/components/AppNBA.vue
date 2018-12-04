@@ -19,29 +19,31 @@
 </template>
 
 <script>
-import {nba} from '@/firebase';
+  import {nba} from '@/firebase';
 
 
 
-export default {
+  export default {
 
-  firebase : {
-     coms : nba
-  },
-
-  methods : {
-    submitCom() {
-      nba.push({commentaire : this.commentaire, edit: false});
-      this.commentaire="";
+    firebase : {
+       coms : nba
     },
 
-    removeCom(key) {
-      nba.child(key).remove();
-    }
+    methods : {
+      submitCom() {
+        nba.push({commentaire : this.commentaire, edit: false});
+        this.commentaire="";
+      },
 
+      removeCom(key) {
+        nba.child(key).remove();
+      }
+
+    }
   }
-}
-</script>
+  </script>
+
+  
 <style>
 
 button, input {

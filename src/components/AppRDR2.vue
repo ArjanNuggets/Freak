@@ -19,29 +19,31 @@
 </template>
 
 <script>
-import {redDead} from '@/firebase';
+  import {redDead} from '@/firebase';
 
 
 
-export default {
+  export default {
 
-  firebase : {
-     coms : redDead
-  },
-
-  methods : {
-    submitCom() {
-      redDead.push({commentaire : this.commentaire, edit: false});
-      this.commentaire="";
+    firebase : {
+       coms : redDead
     },
 
-    removeCom(key) {
-      redDead.child(key).remove();
-    }
+    methods : {
+      submitCom() {
+        redDead.push({commentaire : this.commentaire, edit: false});
+        this.commentaire="";
+      },
 
+      removeCom(key) {
+        redDead.child(key).remove();
+      }
+
+    }
   }
-}
-</script>
+  </script>
+
+  
 <style>
 
 button, input {
