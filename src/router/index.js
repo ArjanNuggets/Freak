@@ -7,6 +7,8 @@ import AppAbout from '@/components/AppAbout'
 import AppRDR2 from '@/components/AppRDR2'
 import AppNBA from '@/components/AppNBA'
 import AppSpiderman from '@/components/AppSpiderman'
+import AppMario from '@/components/AppMario'
+import AppGOW from '@/components/AppGOW'
 
 Vue.use(Router)
 
@@ -43,6 +45,14 @@ export default new Router({
   { path: '/Spiderman',
     name: 'AppSpiderman',
     component: AppSpiderman
+  },
+  { path: '/Mario',
+    name: 'AppMario',
+    component: AppMario
+  },
+  { path: '/GOW',
+    name: 'AppGOW',
+    component: AppGOW
   }
 
   ]

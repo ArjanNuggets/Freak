@@ -11,18 +11,6 @@
 
     <v-spacer></v-spacer>
 
-    <div class="text-xs-center">
-
-      <v-badge left>
-      <span slot="badge">1</span>
-        <v-icon
-          large
-          color="red"
-          >
-          favorite
-        </v-icon>
-      </v-badge>
-    </div>
     <div class="hidden-sm-and-down">
 
 
@@ -48,9 +36,12 @@
 </template>
 
 <script>
-  import AppMenu from './AppMenu'
-  export default {
-    components:{AppMenu}
-  }
+
 
 </script>
+
+<style >
+router-link {
+  text-decoration: none;
+}
+</style>

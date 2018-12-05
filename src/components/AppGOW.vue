@@ -1,12 +1,6 @@
 <template>
       <div>
-
-
-
-
-
-
-
+        <p>gow</p>
         <div>
           <label>Commentaire :</label>
           <input type="text" v-model="commentaire"/>
@@ -25,24 +19,24 @@
 </template>
 
 <script>
-  import {redDead} from '@/firebase';
+  import {gow} from '@/firebase';
 
 
 
   export default {
 
     firebase : {
-       coms : redDead
+       coms : gow
     },
 
     methods : {
       submitCom() {
-        redDead.push({commentaire : this.commentaire, edit: false});
+        gow.push({commentaire : this.commentaire, edit: false});
         this.commentaire="";
       },
 
       removeCom(key) {
-        redDead.child(key).remove();
+        gow.child(key).remove();
       }
 
     }

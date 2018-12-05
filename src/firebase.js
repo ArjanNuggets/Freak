@@ -15,3 +15,6 @@ export const db = app.database();
 export const redDead = db.ref('redDead');
 export const nba = db.ref('nba');
 export const spiderman = db.ref('spiderman');
+export const mario = db.ref('mario');
+export const gow = db.ref('gow');
+export const name = db.ref('name');

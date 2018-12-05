@@ -1,4 +1,4 @@
-/* eslint-disable */
+
 <template>
   <div id="app">
     <app-toolbar></app-toolbar>

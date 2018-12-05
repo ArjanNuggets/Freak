@@ -9,7 +9,7 @@
         color="red lighten-2"
         dark
       >
-        Click Me
+        Clique
       </v-btn>
 
       <v-card>
@@ -17,11 +17,11 @@
           class="headline grey lighten-2"
           primary-title
         >
-          Privacy Policy
+          Message
         </v-card-title>
 
         <v-card-text>
-          Wsh les gars
+          Bouton qui ne sert à rien sauf à montrer que l'on sait utiliser des components
         </v-card-text>
 
         <v-divider></v-divider>
@@ -33,7 +33,7 @@
             flat
             @click="dialog = false"
           >
-            I accept
+            D'accord..
           </v-btn>
         </v-card-actions>
       </v-card>
