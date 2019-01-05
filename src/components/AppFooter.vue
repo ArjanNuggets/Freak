@@ -9,20 +9,6 @@
       row
       wrap
     >
-      <v-btn
-        color="white"
-        flat
-        round
-      >
-      Home
-      </v-btn>
-      <v-btn
-        color="white"
-        flat
-        round
-      >
-      About us
-      </v-btn>
 
       <v-flex
         primary

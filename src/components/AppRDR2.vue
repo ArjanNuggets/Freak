@@ -68,22 +68,25 @@
             </div>
           </div>
 
+          <div class="comtitle text-md-left pt-4">
+            <p class="display-1">Commentaires  </p>
 
-
-
-
-
-        <div class="commentaire">
-          <div>
+            </div>
+          <div class="display" >
             <ul>
               <li v-for="personCom of coms" v-bind:key="personCom['.key']">
 
-                <p class="commentaire"><inline class="name">{{personCom.name}} : </inline> {{personCom.commentaire}}</p>
-                <button @click="removeCom(personCom['.key'])">Remove</button>
+                <p class="com"><inline class="name">{{personCom.name}} : </inline> {{personCom.commentaire}} <button class="rm" @click="removeCom(personCom['.key'])">Remove</button></p>
+
               </li>
             </ul>
 
           </div>
+
+
+
+        <div class="commentaire">
+
 
           <v-flex>
             <v-text-field
@@ -194,6 +197,28 @@
 
 
 <style>
+
+.comtitle {
+  margin-left: 150px;
+}
+.display {
+  text-align: left;
+  margin-left: 150px;
+  margin-top: 20px;
+
+
+}
+.com {
+  background-color: white;
+  padding-left: 10px;
+  padding-top: 10px;
+  border-radius: 10px;
+  margin-right: 200px;
+
+}
+.rm {
+  margin-left: 20px;
+}
 .temp {
   background-color: #E0E0E0;
 }
@@ -214,6 +239,7 @@ ul {
 }
 
 .commentaire {
+  margin-top: 30px;
   background-color: #E0E0E0;
   margin-left: 500px;
   margin-right: 500px;

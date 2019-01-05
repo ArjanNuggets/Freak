@@ -109,9 +109,6 @@
     </div>
 
 
-
-
-      <app-page></app-page>
   </div>
 </template>
 
