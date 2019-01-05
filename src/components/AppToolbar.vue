@@ -24,10 +24,6 @@
         </router-link>
 
 
-        <router-link to='/login'>
-        <v-btn flat>Login</v-btn>
-        </router-link>
-
       </div>
 
 
