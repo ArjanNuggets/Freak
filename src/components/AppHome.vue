@@ -113,39 +113,28 @@
 </template>
 
 <script>
-  import AppPage from './AppPage'
-  import AppRating from './AppRating'
-
-
-
-  export default {
-    components:{AppPage,AppRating},
-
-      }
 
   </script>
 
 <style>
 
-h2 {
+h2, h1 {
   text-align: center;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
   padding-left: 150px;
   padding-right: 150px;
+
 }
 
 .box {
   display: flex;
-  justify-content:space-around;
-  background-color: #E0E0E0;
-
   margin-bottom: 20px;
+  background-color: #E0E0E0;
 }
 
 .text {
@@ -163,7 +152,4 @@ h2 {
   font-weight: bold;
 }
 
-h1 {
-  text-align: center;
-}
 </style>

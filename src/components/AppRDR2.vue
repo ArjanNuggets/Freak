@@ -13,7 +13,7 @@
             </div>
 
             <div class="text">
-            <p class="body-2"> <inline class="font-weight-bold"> Synopsis :</inline> Suite du précédent volet multi récompensé, Red Dead Redemption
+            <p class="title font-weight-light"> <inline class="font-weight-bold"> Synopsis :</inline> Suite du précédent volet multi récompensé, Red Dead Redemption
               II nous permettra de nous replonger sur PS4 dans une ambiance western synonyme de
                vastes espaces sauvages et de villes malfamées. L'histoire se déroule en 1899, avant
                 le premier Red Dead Redemption, au moment où Arthur Morgan doit fuir avec sa bande à la suite
@@ -31,11 +31,11 @@
               <div class="imgs">
                 <img src="../images/RDR2/rdr.jpg" alt="image">
               </div>
-              <div class="img">
-                <img src="../images/RDR2/rdr2.jpg" alt="image">
+              <div class="imgs elevation-2">
+                <img src="../images/RDR2/rdr.jpg" alt="image">
               </div>
               <div class="imgs">
-                <img src="../images/RDR2/rdr3.jpg" alt="image">
+                <img src="../images/RDR2/rdr.jpg" alt="image">
 
               </div>
 
@@ -53,7 +53,7 @@
               <v-data-table
 
                 :items="caracteristique"
-                class="elevation-1"
+                class="elevation-6"
                 hide-actions
                 hide-headers
 
@@ -76,7 +76,11 @@
             <ul>
               <li v-for="personCom of coms" v-bind:key="personCom['.key']">
 
-                <p class="com"><inline class="name">{{personCom.name}} : </inline> {{personCom.commentaire}} <button class="rm" @click="removeCom(personCom['.key'])">Remove</button></p>
+                <p class="com subheading">
+                  <button class="rm font-weight-light" @click="removeCom(personCom['.key'])"><v-icon class="brm">delete</v-icon></button>
+                  <inline class="name">{{personCom.name}} : </inline> {{personCom.commentaire}}
+                </p>
+
 
               </li>
             </ul>
@@ -107,10 +111,12 @@
           required
           >
           <input type="text" v-model="commentaire"/>
-        </v-text-field>
-        </v-flex>
 
-          <button @click="submitCom"> Commenter </button>
+          </v-text-field>
+
+          </v-flex>
+          <button class="bcomment"@click="submitCom">Commenter</button>
+
 
         </div>
   </div>
@@ -198,6 +204,9 @@
 
 <style>
 
+.bcomment {
+  margin-bottom: 30px;
+}
 .comtitle {
   margin-left: 150px;
 }
@@ -205,6 +214,7 @@
   text-align: left;
   margin-left: 150px;
   margin-top: 20px;
+
 
 
 }
@@ -217,17 +227,24 @@
 
 }
 .rm {
-  margin-left: 20px;
+  background-color: white;
+  margin-right: 10px;
 }
 .temp {
   background-color: #E0E0E0;
 }
-button {
+.bcomment {
   padding: 8px;
   border : 1px solid;
   margin-bottom: 10px;
   border-radius: 10px;
   }
+button {
+    padding: 8px;
+
+    margin-bottom: 10px;
+    border-radius: 10px;
+    }
 
 label {
   text-decoration: underline;
@@ -303,15 +320,7 @@ h2, h1 {
 
 }
 
-.img {
-  margin-left: 5px;
-  border: solid grey 1px;
-}
 
-.imgs {
-
-  border: solid grey 1px;
-}
 table {
   border-collapse: collapse;
 }
