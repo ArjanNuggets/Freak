@@ -44,14 +44,11 @@
       </v-timeline-item>
 
     </v-timeline>
-    <app-dialog></app-dialog>
+
   </div>
 </template>
 
 <script>
-  import AppDialog from './AppDialog'
-  export default {
-    components:{AppDialog}
-  }
+
 
 </script>

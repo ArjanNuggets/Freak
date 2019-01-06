@@ -13,17 +13,9 @@
 
     <div class="hidden-sm-and-down">
 
-
-        <router-link to='/about'>
-        <v-btn flat>About</v-btn>
+        <router-link to='/Classement'>
+        <v-btn flat>Classement</v-btn>
         </router-link>
-
-
-        <router-link to='/contact'>
-        <v-btn flat>Contact</v-btn>
-        </router-link>
-
-
       </div>
 
 

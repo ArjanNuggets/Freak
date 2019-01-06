@@ -1,126 +1,142 @@
 <template>
-    <div>
+
 
       <div class="temp">
-        <p class="display-2 font-weight-medium pt-3">Red Dead Redemption</p>
+        <p class="display-2 font-weight-medium pt-3">Red Dead Redemption 2</p>
 
 
-          <div class="box">
+          <div class="affichageSyno">
 
 
             <div class="photo">
-              <img src="../assets/RDR2.jpg" alt="Red Dead">
+              <img src="../assets/RDR2.jpg" alt="Red Dead Redemption 2">
             </div>
 
             <div class="text">
-            <p class="title font-weight-light"> <inline class="font-weight-bold"> Synopsis :</inline> Suite du précédent volet multi récompensé, Red Dead Redemption
-              II nous permettra de nous replonger sur PS4 dans une ambiance western synonyme de
-               vastes espaces sauvages et de villes malfamées. L'histoire se déroule en 1899, avant
-                le premier Red Dead Redemption, au moment où Arthur Morgan doit fuir avec sa bande à la suite
-                 d'un braquage raté. Duels sous un soleil de plomb et grande aventure se
-                 partageront la vedette dès la fin de l'année 2018.</p>
+            <p class="title font-weight-light">
+              <inline class="font-weight-bold"> Synopsis : </inline> Suite du précédent
+               volet multi récompensé, Red Dead Redemption II nous permettra de nous
+               replonger dans une ambiance western synonyme de vastes espaces sauvages
+               et de villes malfamées. Duels sous un soleil de plomb et grande aventure
+               se partageront la vedette.</p>
             </div>
           </div>
 
+            <div class="affichageICara">
+              <div class="affichageImage">
 
-          <div class="image pt-4">
-            <p class="display-1">Images </p>
+                <div class="image pt-4">
+                  <p class="display-1">Images </p>
+                  </div>
+
+                <div class="templateImage">
+                  <v-carousel hide-delimiters style="height : 370px; width : 560px;" class="carousel"
+                  >
+                    <v-carousel-item
+                      v-for="(item,i) in items"
+                      :key="i"
+                      :src="item.src"
+                      style="height: 100%"
+                    ></v-carousel-item>
+                  </v-carousel>
+                  </div>
+
+
+                </div>
+
+
+
+
+              <div class="affichageCara">
+                <div class="caracteristique pt-4">
+                  <p class="display-1">Caractéristique du jeu</p>
+
+                  </div>
+
+                <div class="caracteristique pt-4 pb-4">
+
+                  <v-data-table
+
+                    :items="caracteristique"
+                    class="elevation-6"
+                    hide-actions
+                    hide-headers
+
+                  >
+                    <template slot="items" slot-scope="props">
+                      <td class="tabname subheading">{{ props.item.name }}</td>
+                      <td class="tabval text-xs-left subheading pr-5">{{ props.item.entre }}</td>
+                    </template>
+                  </v-data-table>
+
+
+                </div>
+              </div>
 
             </div>
-            <div class="images">
-              <div class="imgs">
-                <img src="../images/RDR2/rdr.jpg" alt="image">
+
+
+
+              <div class="affichageCom">
+                <div class="comtitle text-md-left pt-4">
+                  <p class="display-1">Les avis des joueurs</p>
+
+                  </div>
+
+                <div class="display" >
+                  <ul>
+                    <li v-for="personCom of coms" v-bind:key="personCom['.key']">
+
+                      <p class="com subheading">
+                        <button class="rm font-weight-light" @click="removeCom(personCom['.key'])"><v-icon class="brm">delete</v-icon></button>
+                        <inline class="name">{{personCom.name}} : </inline> <inline class="font-italic">{{personCom.commentaire}}</inline>
+                      </p>
+
+
+                    </li>
+                  </ul>
+
+                </div>
               </div>
-              <div class="imgs elevation-2">
-                <img src="../images/RDR2/rdr.jpg" alt="image">
+              <div class="commenter">
+
+                  <v-flex>
+                    <v-text-field
+                      label="Pseudo"
+                      v-model="name"
+                      value=""
+                      outline
+                      required
+                      >
+                      <input type="text" v-model="name"/>
+                      </v-text-field>
+
+                    <v-text-field
+                      label="Commentaire"
+                      v-model="commentaire"
+                      value =""
+                      outline
+                      required
+                      >
+                      <input type="text" v-model="commentaire"/>
+
+                      </v-text-field>
+
+                    </v-flex>
+
+
+                    <button class="bcomment"@click="submitCom">Commenter</button>
+
+
+
               </div>
-              <div class="imgs">
-                <img src="../images/RDR2/rdr.jpg" alt="image">
-
-              </div>
-
-          </div>
-
-
-          <div class="cara">
-            <div class="caracteristique pt-4">
-              <p class="display-1">Caractéristique du jeu</p>
-
-              </div>
-
-            <div class="caracteristique pt-4 pb-4">
-
-              <v-data-table
-
-                :items="caracteristique"
-                class="elevation-6"
-                hide-actions
-                hide-headers
-
-              >
-                <template slot="items" slot-scope="props">
-                  <td class="tabname subheading">{{ props.item.name }}</td>
-                  <td class="tabval text-xs-left subheading pr-5">{{ props.item.entre }}</td>
-                </template>
-              </v-data-table>
-
-
-            </div>
-          </div>
-
-          <div class="comtitle text-md-left pt-4">
-            <p class="display-1">Commentaires  </p>
-
-            </div>
-          <div class="display" >
-            <ul>
-              <li v-for="personCom of coms" v-bind:key="personCom['.key']">
-
-                <p class="com subheading">
-                  <button class="rm font-weight-light" @click="removeCom(personCom['.key'])"><v-icon class="brm">delete</v-icon></button>
-                  <inline class="name">{{personCom.name}} : </inline> {{personCom.commentaire}}
-                </p>
-
-
-              </li>
-            </ul>
-
-          </div>
 
 
 
-        <div class="commentaire">
 
 
-          <v-flex>
-            <v-text-field
-            label="Pseudo"
-            v-model="name"
-            value=""
-            outline
-            required
-            >
-            <input type="text" v-model="name"/>
-          </v-text-field>
-
-
-          <v-text-field
-          label="Commentaire"
-          v-model="commentaire"
-          outline
-          required
-          >
-          <input type="text" v-model="commentaire"/>
-
-          </v-text-field>
-
-          </v-flex>
-          <button class="bcomment"@click="submitCom">Commenter</button>
-
-
-        </div>
   </div>
-  </div>
+
 </template>
 
 <script>
@@ -132,9 +148,24 @@
 
     data () {
       return {
+        items: [
+          {
+            src: require('../images/RDR2/rdr.jpg')
+          },
+          {
+            src: require('../images/RDR2/rdr1.jpg')
+          },
+          {
+            src: require('../images/RDR2/rdr4.jpg')
+          },
+          {
+            src: require('../images/RDR2/rdr5.jpg')
+          }
+        ],
+
         headers: [
           {
-            text: 'Red Dead Redemption',
+            text: 'Red Dead Redemption 2',
             align: 'left',
             sortable: false,
             value: 'name'
@@ -150,12 +181,12 @@
           {
             value: false,
             name: 'Sortie : ',
-            entre : '26 octobre 2018'
+            entre : '26 Octobre 2018'
           },
           {
             value: false,
             name: 'Genre : ',
-            entre : 'TPS'
+            entre : "TPS"
           },
           {
             value: false,
@@ -170,7 +201,7 @@
           {
             value: false,
             name: 'Mode(s) : ',
-            entre : 'En Ligne / Solo'
+            entre : 'Solo / Multi-joueur'
           },
           {
             value: false,
@@ -202,139 +233,164 @@
   </script>
 
 
-<style>
+  <style>
 
-.bcomment {
-  margin-bottom: 30px;
-}
-.comtitle {
-  margin-left: 150px;
-}
-.display {
-  text-align: left;
-  margin-left: 150px;
-  margin-top: 20px;
-
+      .affichageCom {
+      background-color: white;
+      border-radius: 20px;
+      margin-top: 30px;
+      margin-left: 150px;
+      margin-right: 150px;
+      padding-right: 30px;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
 
 
-}
-.com {
-  background-color: white;
-  padding-left: 10px;
-  padding-top: 10px;
-  border-radius: 10px;
-  margin-right: 200px;
+      }
+      .commenter {
 
-}
-.rm {
-  background-color: white;
-  margin-right: 10px;
-}
-.temp {
-  background-color: #E0E0E0;
-}
-.bcomment {
-  padding: 8px;
-  border : 1px solid;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  }
-button {
-    padding: 8px;
+        background-color: white;
+        border-radius: 20px;
+        padding-top: 40px;
+        padding-bottom: 20px;
+        padding-left: 30px;
+        margin-left: 500px;
+        margin-right: 500px;
+        padding-right: 30px;
 
-    margin-bottom: 10px;
-    border-radius: 10px;
+        }
+
+    .photo {
+      padding: 20px;
+    }
+    .affichageImage{
+      background-color: white;
+      border-radius: 20px;
+      margin-left: 150px;
+      margin-right: 20px;
+
     }
 
-label {
-  text-decoration: underline;
-}
+    .carousel {
+      margin-left: 30px;
+      border-radius: 20px;
+      margin-right: 30px;
+    }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
+    .image{
+      display: flex;
+      padding-left: 30px;
+    }
 
-.commentaire {
-  margin-top: 30px;
-  background-color: #E0E0E0;
-  margin-left: 500px;
-  margin-right: 500px;
+    .affichageICara {
+      display: flex;
 
-}
-
-.name {
-  font-weight: bold;
-}
+    }
 
 
-h2, h1 {
-  text-align: center;
-}
+    .comtitle {
+      margin-left: 40px;
+    }
+
+    .display {
+      text-align: left;
+      margin-left: 40px;
+      margin-top: 20px;
 
 
-.box {
-  display: flex;
-  justify-content:space-around;
-  background-color: white;
-  margin-bottom: 20px;
-  margin-left: 150px;
-  margin-right: 150px;
-  margin-top: 20px;
-  border-radius: 10px;
+    }
+
+    .com {
+      background-color: #EFF0F0;
+      padding-left: 10px;
+      border-radius: 10px;
+      padding-right: 10px;
 
 
-}
 
-.text {
-  padding: 20px;
-  padding-left: 30px;
-  text-align: justify;
-}
+    }
 
-.photo {
-  padding: 20px;
-}
+    .rm {
+      margin-right: 10px;
+    }
 
-.cara {
-  background-color: white;
-  margin-top: 40px;
-  padding-bottom: 10px;
-  margin-bottom : 10px;
-}
-.caracteristique {
-  display: flex;
-  padding-left: 150px;
+    .temp {
+      background-color: #EFF0F0;
+      padding-bottom: 20px;
+    }
 
-}
-.image{
-  display: flex;
-  padding-left: 150px;
+    .bcomment {
+      padding: 8px;
+      border : 1px solid;
+      border-radius: 10px;
+      }
 
-}
+    button {
+        padding: 8px;
+        border-radius: 10px;
+        }
 
-.images{
-  display: flex;
-  padding-left: 150px;
-  flex-flow: row wrap;
+    label {
+      text-decoration: underline;
+    }
 
-}
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
 
 
-table {
-  border-collapse: collapse;
-}
-td {
-  border: 1px solid #E0E0E0;
-}
+    .name {
+      font-weight: bold;
+    }
 
+    h2, h1 {
+      text-align: center;
+    }
 
-.tabname {
-  background-color: #EEEEEE;
-}
-.tabval {
-  background-color: white;
-}
+    .affichageSyno {
+      display: flex;
+      background-color: white;
+      margin-bottom: 20px;
+      margin-left: 150px;
+      margin-right: 150px;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
 
+    .text {
+      padding: 20px;
+      padding-left: 30px;
+      text-align: justify;
+    }
 
-</style>
+    .affichageCara {
+
+      border-radius: 20px;
+      background-color: white;
+      padding-left: 60px;
+      padding-right: 270px;
+      padding-bottom: 30px;
+    }
+
+    .caracteristique {
+      display: flex;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    td {
+      border: 1px solid #E0E0E0;
+    }
+
+    .tabname {
+      background-color: #EEEEEE;
+    }
+
+    .tabval {
+      background-color: white;
+    }
+
+    </style>

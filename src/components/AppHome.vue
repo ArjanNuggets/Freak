@@ -1,7 +1,6 @@
 <template >
 
   <div>
-    <v-spacer></v-spacer>
 <img src="../assets/freak.png" alt="freak">
 
   <div class="container">

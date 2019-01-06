@@ -2,13 +2,13 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import AppHome from '@/components/AppHome'
 import AppLogin from '@/components/AppLogin'
-import AppContact from '@/components/AppContact'
 import AppAbout from '@/components/AppAbout'
 import AppRDR2 from '@/components/AppRDR2'
 import AppNBA from '@/components/AppNBA'
 import AppSpiderman from '@/components/AppSpiderman'
 import AppMario from '@/components/AppMario'
 import AppGOW from '@/components/AppGOW'
+import AppClassement from '@/components/AppClassement'
 
 Vue.use(Router)
 
@@ -23,11 +23,6 @@ export default new Router({
       path: '/login',
       name: 'AppLogin',
       component: AppLogin
-    },
-    {
-      path: '/contact',
-      name: 'AppContact',
-      component: AppContact
     },
     {
       path: '/about',
@@ -53,6 +48,10 @@ export default new Router({
   { path: '/GOW',
     name: 'AppGOW',
     component: AppGOW
+  },
+  { path: '/Classement',
+    name: 'AppClassement',
+    component: AppClassement
   }
 
   ]

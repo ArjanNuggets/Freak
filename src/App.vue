@@ -1,10 +1,12 @@
-
 <template>
   <div id="app">
+
     <app-toolbar></app-toolbar>
-      <router-view/>
+
+    <router-view/>
 
     <app-footer></app-footer>
+
   </div>
 </template>
 
@@ -27,6 +29,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-
 }
 </style>

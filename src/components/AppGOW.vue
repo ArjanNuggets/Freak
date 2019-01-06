@@ -1,11 +1,11 @@
 <template>
-    <div>
+
 
       <div class="temp">
         <p class="display-2 font-weight-medium pt-3">God of War</p>
 
 
-          <div class="box">
+          <div class="affichageSyno">
 
 
             <div class="photo">
@@ -22,82 +22,99 @@
             </div>
           </div>
 
+            <div class="affichageICara">
+              <div class="affichageImage">
 
-          <div class="image pt-4">
-            <p class="display-1">Images </p>
+                <div class="image pt-4">
+                  <p class="display-1">Images </p>
+                  </div>
 
-            </div>
-            <img src="../assets/GOW.jpg" alt="God Of War">
+                <div class="templateImage">
+                  <v-carousel hide-delimiters style="height : 370px; width : 560px;" class="carousel"
+                  >
+                    <v-carousel-item
+                      v-for="(item,i) in items"
+                      :key="i"
+                      :src="item.src"
+                      style="height: 100%"
+                    ></v-carousel-item>
+                  </v-carousel>
+                  </div>
 
 
-          </div>
+                </div>
 
 
-          <div class="cara">
-            <div class="caracteristique pt-4">
-              <p class="display-1">Caractéristique du jeu</p>
 
+
+              <div class="affichageCara">
+                <div class="caracteristique pt-4">
+                  <p class="display-1">Caractéristique du jeu</p>
+
+                  </div>
+
+                <div class="caracteristique pt-4 pb-4">
+
+                  <v-data-table
+
+                    :items="caracteristique"
+                    class="elevation-6"
+                    hide-actions
+                    hide-headers
+
+                  >
+                    <template slot="items" slot-scope="props">
+                      <td class="tabname subheading">{{ props.item.name }}</td>
+                      <td class="tabval text-xs-left subheading pr-5">{{ props.item.entre }}</td>
+                    </template>
+                  </v-data-table>
+
+
+                </div>
               </div>
 
-            <div class="caracteristique pt-4 pb-4">
-
-              <v-data-table
-
-                :items="caracteristique"
-                class="elevation-6"
-                hide-actions
-                hide-headers
-
-              >
-                <template slot="items" slot-scope="props">
-                  <td class="tabname subheading">{{ props.item.name }}</td>
-                  <td class="tabval text-xs-left subheading pr-5">{{ props.item.entre }}</td>
-                </template>
-              </v-data-table>
-
-
             </div>
-          </div>
-          <div class="point">
-            <div class="comtitle text-md-left pt-4">
-              <p class="display-1">Commentaires  </p>
 
+
+
+              <div class="affichageCom">
+                <div class="comtitle text-md-left pt-4">
+                  <p class="display-1">Les avis des joueurs</p>
+
+                  </div>
+
+                <div class="display" >
+                  <ul>
+                    <li v-for="personCom of coms" v-bind:key="personCom['.key']">
+
+                      <p class="com subheading">
+                        <button class="rm font-weight-light" @click="removeCom(personCom['.key'])"><v-icon class="brm">delete</v-icon></button>
+                        <inline class="name">{{personCom.name}} : </inline> <inline class="font-italic">{{personCom.commentaire}}</inline>
+                      </p>
+
+
+                    </li>
+                  </ul>
+
+                </div>
               </div>
-            <div class="display" >
-              <ul>
-                <li v-for="personCom of coms" v-bind:key="personCom['.key']">
+              <div class="commenter">
 
-                  <p class="com subheading">
-                    <button class="rm font-weight-light" @click="removeCom(personCom['.key'])"><v-icon class="brm">delete</v-icon></button>
-                    <inline class="name">{{personCom.name}} : </inline> {{personCom.commentaire}}
-                  </p>
-
-
-                </li>
-              </ul>
-
-            </div>
-
-
-
-                    <div class="commentaire">
-
-
-                      <v-flex>
-                        <v-text-field
-                        label="Pseudo"
-                        v-model="name"
-                        value=""
-                        outline
-                        required
-                        >
-                        <input type="text" v-model="name"/>
+                  <v-flex>
+                    <v-text-field
+                      label="Pseudo"
+                      v-model="name"
+                      value=""
+                      outline
+                      required
+                      >
+                      <input type="text" v-model="name"/>
                       </v-text-field>
 
-
-                      <v-text-field
+                    <v-text-field
                       label="Commentaire"
                       v-model="commentaire"
+                      value =""
                       outline
                       required
                       >
@@ -105,61 +122,117 @@
 
                       </v-text-field>
 
-                      </v-flex>
-                      <button class="bcomment"@click="submitCom">Commenter</button>
+                    </v-flex>
 
 
-                    </div>
-          </div>
+                    <button class="bcomment"@click="submitCom">Commenter</button>
+
+
+
+              </div>
+
+
+
 
 
   </div>
-  </div>
+
 </template>
 
 <style>
-  .point {
-  background-color: #E0E0E0;
-  }
-  .bcomment {
-    margin-bottom: 30px;
-  }
-  .comtitle {
+
+    .affichageCom {
+    background-color: white;
+    border-radius: 20px;
+    margin-top: 30px;
     margin-left: 150px;
+    margin-right: 150px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+
+
+    }
+    .commenter {
+
+      background-color: white;
+      border-radius: 20px;
+      padding-top: 40px;
+      padding-bottom: 20px;
+      padding-left: 30px;
+      margin-left: 500px;
+      margin-right: 500px;
+      padding-right: 30px;
+
+      }
+
+  .photo {
+    padding: 20px;
   }
+  .affichageImage{
+    background-color: white;
+    border-radius: 20px;
+    margin-left: 150px;
+    margin-right: 20px;
+
+  }
+
+  .carousel {
+    margin-left: 30px;
+    border-radius: 20px;
+    margin-right: 30px;
+  }
+
+  .image{
+    display: flex;
+    padding-left: 30px;
+  }
+
+  .affichageICara {
+    display: flex;
+
+  }
+
+
+  .comtitle {
+    margin-left: 40px;
+  }
+
   .display {
     text-align: left;
-    margin-left: 150px;
+    margin-left: 40px;
     margin-top: 20px;
 
 
-
-
   }
+
   .com {
-    background-color: white;
+    background-color: #EFF0F0;
     padding-left: 10px;
-    padding-top: 10px;
     border-radius: 10px;
-    margin-right: 200px;
+    padding-right: 10px;
+
+
 
   }
+
   .rm {
     margin-right: 10px;
   }
+
   .temp {
-    background-color: #E0E0E0;
+    background-color: #EFF0F0;
+    padding-bottom: 20px;
   }
+
   .bcomment {
     padding: 8px;
     border : 1px solid;
-    margin-bottom: 10px;
     border-radius: 10px;
     }
+
   button {
       padding: 8px;
-
-      margin-bottom: 10px;
       border-radius: 10px;
       }
 
@@ -172,35 +245,23 @@
     padding: 0;
   }
 
-  .commentaire {
-    margin-top: 30px;
-    background-color: #E0E0E0;
-    margin-left: 500px;
-    margin-right: 500px;
-
-  }
 
   .name {
     font-weight: bold;
   }
 
-
   h2, h1 {
     text-align: center;
   }
 
-
-  .box {
+  .affichageSyno {
     display: flex;
-    justify-content:space-around;
     background-color: white;
     margin-bottom: 20px;
     margin-left: 150px;
     margin-right: 150px;
     margin-top: 20px;
     border-radius: 10px;
-
-
   }
 
   .text {
@@ -209,50 +270,34 @@
     text-align: justify;
   }
 
-  .photo {
-    padding: 20px;
+  .affichageCara {
+
+    border-radius: 20px;
+    background-color: white;
+    padding-left: 60px;
+    padding-right: 40px;
+    padding-bottom: 30px;
   }
 
-  .cara {
-    background-color: white;
-    margin-top: 40px;
-    padding-bottom: 10px;
-    margin-bottom : 10px;
-  }
   .caracteristique {
     display: flex;
-    padding-left: 150px;
-
   }
-  .image{
-    display: flex;
-    padding-left: 150px;
-
-  }
-
-  .images{
-    display: flex;
-    padding-left: 150px;
-    flex-flow: row wrap;
-
-  }
-
 
   table {
     border-collapse: collapse;
   }
+
   td {
     border: 1px solid #E0E0E0;
   }
 
-
   .tabname {
     background-color: #EEEEEE;
   }
+
   .tabval {
     background-color: white;
   }
-
 
   </style>
 
@@ -264,6 +309,21 @@
   export default {
     data () {
       return {
+        items: [
+          {
+            src: require('../images/GOW/gow.jpg')
+          },
+          {
+            src: require('../images/GOW/gow2.jpg')
+          },
+          {
+            src: require('../images/GOW/gow3.jpg')
+          },
+          {
+            src: require('../images/GOW/gow4.jpg')
+          }
+        ],
+
         headers: [
           {
             text: 'God of War',
@@ -316,7 +376,6 @@
     firebase : {
        coms : gow
     },
-
     methods : {
       submitCom() {
         gow.push({commentaire : this.commentaire, name : this.name, edit: false});
