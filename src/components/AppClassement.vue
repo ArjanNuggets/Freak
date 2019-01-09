@@ -38,7 +38,7 @@
     padding-top : 20px;
     margin-left: 400px;
     margin-right: 400px;
-    padding-bottom: 40vh;
+    padding-bottom: 41.8vh;
     }
     </style>
 

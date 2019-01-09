@@ -126,7 +126,7 @@
                     </v-flex>
 
 
-                    <button class="bcomment"@click="submitCom">Commenter</button>
+                    <button class="bcomment" @click="submitCom">Commenter</button>
 
 
 
@@ -276,7 +276,7 @@
     border-radius: 20px;
     background-color: white;
     padding-left: 60px;
-    padding-right: 270px;
+    padding-right: 250px;
     padding-bottom: 30px;
   }
 

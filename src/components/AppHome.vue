@@ -77,7 +77,7 @@
 
                   <div class="text">
                   <h2>God Of War</h2>
-                  <p> <inline class='Synopsis'> Synopsis :</inline>Dans ce nouvel
+                  <p> <inline class='Synopsis'> Synopsis :</inline> Dans ce nouvel
                     épisode de God Of War, le héros évoluera dans un monde aux inspirations
                     nordiques, très forestier et montagneux. Dans ce beat-them-all, un enfant
                      accompagnera le héros principal, pouvant apprendre des actions du joueur,

@@ -163,7 +163,7 @@
       padding-left: 30px;
       margin-left: 500px;
       margin-right: 500px;
-      padding-right: 30px;
+      padding-right: 40px;
 
       }
 

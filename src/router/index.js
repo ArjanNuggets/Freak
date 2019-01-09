@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import AppHome from '@/components/AppHome'
-import AppLogin from '@/components/AppLogin'
-import AppAbout from '@/components/AppAbout'
 import AppRDR2 from '@/components/AppRDR2'
 import AppNBA from '@/components/AppNBA'
 import AppSpiderman from '@/components/AppSpiderman'
@@ -19,16 +17,7 @@ export default new Router({
       name: 'AppHome',
       component: AppHome
     },
-    {
-      path: '/login',
-      name: 'AppLogin',
-      component: AppLogin
-    },
-    {
-      path: '/about',
-      name: 'AppAbout',
-      component: AppAbout
-    },
+
     { path: '/RDR2',
       name: 'AppRDR2',
       component: AppRDR2

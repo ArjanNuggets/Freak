@@ -18,7 +18,7 @@
         white--text
         xs12
       >
-        &copy;2018 — <strong>ArjanNuggets</strong>
+        &copy;2019 — <strong>Gaetan et Arian</strong>
       </v-flex>
     </v-layout>
   </v-footer>

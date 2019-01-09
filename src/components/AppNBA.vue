@@ -204,8 +204,6 @@
     text-align: left;
     margin-left: 40px;
     margin-top: 20px;
-
-
   }
 
   .com {
